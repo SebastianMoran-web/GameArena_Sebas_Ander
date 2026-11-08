@@ -1,4 +1,7 @@
 package com.example.GameArena.Repositorios;
 
-public class RepositorioJugador {
+import com.example.GameArena.Modelos.Jugador;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface RepositorioJugador  extends JpaRepository<Jugador,Long>{
 }
