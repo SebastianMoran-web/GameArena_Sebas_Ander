@@ -1,31 +1,41 @@
 package com.example.GameArena.Modelos;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 
+import java.util.List;
+
 @Entity
-@Table(name="Jugador")
+@Table(name="Torneo")
 public class Torneo {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long  id;
+    private Long id;
 
     private String nombre;
     private String fecha;
     private String premio;
     private String estado;
-    private String videojuego;
+
+    @OneToMany(mappedBy = "torneo")
+    @JsonIgnore
+    private List<Participacion> participaciones;
+
+    @ManyToOne
+    @JoinColumn(name = "videojuego_id")
+    private Videojuego videojuego;
 
 
     public Torneo() {
 
     }
 
-    public long getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -59,14 +69,6 @@ public class Torneo {
 
     public void setEstado(String estado) {
         this.estado = estado;
-    }
-
-    public String getVideojuego() {
-        return videojuego;
-    }
-
-    public void setVideojuego(String videojuego) {
-        this.videojuego = videojuego;
     }
 
 }
