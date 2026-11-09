@@ -18,13 +18,13 @@ public class Torneo {
     private String premio;
     private String estado;
 
-    @OneToMany(mappedBy = "torneo")
-    @JsonIgnore
-    private List<Participacion> participaciones;
+    //@OneToMany(mappedBy = "torneo")
+    //@JsonIgnore
+    //private List<Participacion> participaciones;
 
-    @ManyToOne
-    @JoinColumn(name = "videojuego_id")
-    private Videojuego videojuego;
+    //@ManyToOne
+   // @JoinColumn(name = "videojuego_id")
+    //private Videojuego videojuego;
 
 
     public Torneo() {
