@@ -1,7 +1,7 @@
 package com.example.GameArena.controlador;
 
 import com.example.GameArena.Modelos.Torneo;
-import com.example.GameArena.Service.ServiceTorneo;
+import com.example.GameArena.Servicios.ServiciosTorneo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import java.util.List;
@@ -12,7 +12,7 @@ import java.util.List;
 public class ControladorTorneo {
 
     @Autowired
-    private ServiceTorneo serviceTorneo;
+    private ServiciosTorneo serviceTorneo;
 
     @GetMapping
     public List<Torneo> getTorneos(){
