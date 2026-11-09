@@ -2,7 +2,6 @@ package com.example.GameArena.Controller;
 
 import com.example.GameArena.Modelos.Jugador;
 import com.example.GameArena.Servicios.ServiciosJugador;
-import
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import java.util.List;
