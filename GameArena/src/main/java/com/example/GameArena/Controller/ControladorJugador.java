@@ -1,7 +1,7 @@
 package com.example.GameArena.Controller;
 
 import com.example.GameArena.Modelos.Jugador;
-import com.example.GameArena.Service.ServiceJugador;
+import com.example.GameArena.Servicio.ServicioJugador;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import java.util.List;
@@ -12,37 +12,37 @@ import java.util.List;
 public class ControladorJugador {
 
     @Autowired
-    private ServiceJugador serviceJugador;
+    private ServicioJugador servicioJugador;
 
     @GetMapping
     public List<Jugador> getJugadores(){
 
-        return serviceJugador.obtenerTodos();
+        return servicioJugador.obtenerTodos();
     }
 
     @PostMapping
     public Jugador createJugador(@RequestBody Jugador jugador){
 
-        return serviceJugador.guardar(jugador);
+        return servicioJugador.guardar(jugador);
     }
 
     @GetMapping("/{id}")
     public Jugador getJugador(@PathVariable Long id){
 
-        return serviceJugador.buscarPorId(id);
+        return servicioJugador.buscarPorId(id);
 
     }
 
     @DeleteMapping("/{id}")
     public void eliminarJugador(@PathVariable Long id) {
-        serviceJugador.borrarPorId(id);
+        servicioJugador.borrarPorId(id);
     }
 
     @PutMapping("/{id}")
     public Jugador updateJugador(@PathVariable Long id, @RequestBody Jugador jugador){
 
         jugador.setId(id);
-        return serviceJugador.modificarJugador(jugador);
+        return servicioJugador.modificarJugador(jugador);
 
     }
 

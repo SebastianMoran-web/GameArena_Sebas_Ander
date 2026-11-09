@@ -1,4 +1,4 @@
-package com.example.GameArena.Service;
+package com.example.GameArena.Servicio;
 
 import com.example.GameArena.Modelos.Jugador;
 import com.example.GameArena.Repositorios.RepositorioJugador;
@@ -9,7 +9,7 @@ import java.util.List;
 
 
 @Service
-public class ServiceJugador {
+public class ServicioJugador {
 
     @Autowired
     private RepositorioJugador repositorioJugador;
