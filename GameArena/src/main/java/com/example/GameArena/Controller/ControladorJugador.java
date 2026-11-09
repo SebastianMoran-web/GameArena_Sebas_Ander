@@ -46,11 +46,11 @@ public class ControladorJugador {
 
     }
 
-    @GetMapping("/{id}/participaciones")
-    public List<Participacion> participaciones(Long id){
+    //@GetMapping("/{id}/participaciones")
+    //public List<Participacion> participaciones(Long id){
 
-        return serviciosJugador.obtenerParticipaciones(id);
+      //  return serviciosJugador.obtenerParticipaciones(id);
 
-    }
+    //}
 
 }

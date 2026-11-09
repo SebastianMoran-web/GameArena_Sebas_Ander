@@ -36,14 +36,14 @@ public class ServiciosJugador {
         return repositorioJugador.save(jugador);
     }
 
-    public List<Participacion> obtenerParticipaciones(Long id) {
+    //public List<Participacion> obtenerParticipaciones(Long id) {
 
-        Jugador jugador = repositorioJugador.findById(id).orElse(null);
+      //  Jugador jugador = repositorioJugador.findById(id).orElse(null);
 
-        if (jugador != null) {
-            return jugador.getParticipaciones();
-        }
+        //if (jugador != null) {
+          //  return jugador.getParticipaciones();
+        //}
 
-        return null;
-    }
+        //return null;
+    //}
 }
