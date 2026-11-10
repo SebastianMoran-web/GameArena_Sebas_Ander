@@ -26,6 +26,7 @@ public class Torneo {
    // @JoinColumn(name = "videojuego_id")
     //private Videojuego videojuego;
 
+    //mkmmkmk
 
     public Torneo() {
 
