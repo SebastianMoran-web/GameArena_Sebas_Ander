@@ -1,7 +1,7 @@
 package com.example.GameArena.Controller;
 
 import com.example.GameArena.Modelos.Jugador;
-import com.example.GameArena.Service.ServiceJugador;
+import com.example.GameArena.Servicios.ServiciosJugador;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import java.util.List;
@@ -12,40 +12,45 @@ import java.util.List;
 public class ControladorJugador {
 
     @Autowired
-    private ServiceJugador serviceJugador;
+    private ServiciosJugador serviciosJugador;
 
     @GetMapping
     public List<Jugador> getJugadores(){
 
-        return serviceJugador.obtenerTodos();
+        return serviciosJugador.obtenerTodos();
     }
 
     @PostMapping
     public Jugador createJugador(@RequestBody Jugador jugador){
 
-        return serviceJugador.guardar(jugador);
+        return serviciosJugador.guardar(jugador);
     }
 
     @GetMapping("/{id}")
     public Jugador getJugador(@PathVariable Long id){
 
-        return serviceJugador.buscarPorId(id);
+        return serviciosJugador.buscarPorId(id);
 
     }
 
     @DeleteMapping("/{id}")
     public void eliminarJugador(@PathVariable Long id) {
-        serviceJugador.borrarPorId(id);
+        serviciosJugador.borrarPorId(id);
     }
 
     @PutMapping("/{id}")
     public Jugador updateJugador(@PathVariable Long id, @RequestBody Jugador jugador){
 
         jugador.setId(id);
-        return serviceJugador.modificarJugador(jugador);
+        return serviciosJugador.modificarJugador(jugador);
 
     }
 
+    //@GetMapping("/{id}/participaciones")
+    //public List<Participacion> participaciones(Long id){
 
+      //  return serviciosJugador.obtenerParticipaciones(id);
+
+    //}
 
 }

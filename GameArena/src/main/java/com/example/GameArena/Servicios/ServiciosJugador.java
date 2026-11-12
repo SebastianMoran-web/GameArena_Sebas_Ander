@@ -1,4 +1,4 @@
-package com.example.GameArena.Service;
+package com.example.GameArena.Servicios;
 
 import com.example.GameArena.Modelos.Jugador;
 import com.example.GameArena.Repositorios.RepositorioJugador;
@@ -9,7 +9,7 @@ import java.util.List;
 
 
 @Service
-public class ServiceJugador {
+public class ServiciosJugador {
 
     @Autowired
     private RepositorioJugador repositorioJugador;
@@ -36,4 +36,14 @@ public class ServiceJugador {
         return repositorioJugador.save(jugador);
     }
 
+    //public List<Participacion> obtenerParticipaciones(Long id) {
+
+      //  Jugador jugador = repositorioJugador.findById(id).orElse(null);
+
+        //if (jugador != null) {
+          //  return jugador.getParticipaciones();
+        //}
+
+        //return null;
+    //}
 }
