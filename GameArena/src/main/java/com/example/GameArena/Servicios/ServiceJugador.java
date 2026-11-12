@@ -1,4 +1,4 @@
-package com.example.GameArena.Service;
+package com.example.GameArena.Servicios;
 
 import com.example.GameArena.Modelos.Jugador;
 import com.example.GameArena.Repositorios.RepositorioJugador;

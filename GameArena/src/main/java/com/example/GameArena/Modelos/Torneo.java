@@ -1,12 +1,11 @@
 package com.example.GameArena.Modelos;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnore; // <--- AÑADE ESTE IMPORT
 import jakarta.persistence.*;
-
 import java.util.List;
+import java.time.LocalDate;
 
 @Entity
-@Table(name="Torneo")
 public class Torneo {
 
     @Id
@@ -18,58 +17,39 @@ public class Torneo {
     private String premio;
     private String estado;
 
-    //@OneToMany(mappedBy = "torneo")
-    //@JsonIgnore
-    //private List<Participacion> participaciones;
+    @OneToMany(mappedBy = "torneo")
+    @JsonIgnore
+    private List<Participacion> participaciones;
 
-    //@ManyToOne
-   // @JoinColumn(name = "videojuego_id")
-    //private Videojuego videojuego;
-
-    //mkmmkmk
+    @ManyToOne
+    @JoinColumn(name = "videojuego_id")
+    private Videojuego videojuego;
 
     public Torneo() {
-
     }
 
-    public Long getId() {
-        return id;
-    }
+    @OneToMany(mappedBy = "torneo")
+    @JsonIgnore // <--- AÑADE ESTA LÍNEA AQUÍ TAMBIÉN
+    private List<Participacion> participacion;
 
-    public void setId(Long id) {
-        this.id = id;
-    }
+    public Long getId() { return id; }
+    public void setId(Long id) { this.id = id; }
 
-    public String getNombre() {
-        return nombre;
-    }
+    public String getNombre() { return nombre; }
+    public void setNombre(String nombre) { this.nombre = nombre; }
 
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
+    public String getFecha() { return fecha; }
+    public void setFecha(String fecha) { this.fecha = fecha; }
 
-    public String getFecha() {
-        return fecha;
-    }
+    public String getPremio() { return premio; }
+    public void setPremio(String premio) { this.premio = premio; }
 
-    public void setFecha(String fecha) {
-        this.fecha = fecha;
-    }
+    public String getEstado() { return estado; }
+    public void setEstado(String estado) { this.estado = estado; }
 
-    public String getPremio() {
-        return premio;
-    }
+    public List<Participacion> getParticipaciones() { return participaciones; }
+    public void setParticipaciones(List<Participacion> participaciones) { this.participaciones = participaciones; }
 
-    public void setPremio(String premio) {
-        this.premio = premio;
-    }
-
-    public String getEstado() {
-        return estado;
-    }
-
-    public void setEstado(String estado) {
-        this.estado = estado;
-    }
-
+    public Videojuego getVideojuego() { return videojuego; }
+    public void setVideojuego(Videojuego videojuego) { this.videojuego = videojuego; }
 }

@@ -1,14 +1,14 @@
 package com.example.GameArena.Controller;
 
 import com.example.GameArena.Modelos.Jugador;
-import com.example.GameArena.Service.ServiceJugador;
+import com.example.GameArena.Servicios.ServiceJugador;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/jugadores")
-
+@RequestMapping("/jugadores") // o el endpoint que corresponda
+@CrossOrigin(origins = "*") // Para desarrollo, permite cualquier origen
 public class ControladorJugador {
 
     @Autowired

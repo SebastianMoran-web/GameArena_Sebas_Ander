@@ -1,8 +1,7 @@
-package com.example.GameArena.Repositorio;
+package com.example.GameArena.Repositorios;
 
 import com.example.GameArena.Modelos.Torneo;
 import org.springframework.data.jpa.repository.JpaRepository;
-
 import java.util.List;
 
 public interface RepositorioTorneo  extends JpaRepository<Torneo,Long>{

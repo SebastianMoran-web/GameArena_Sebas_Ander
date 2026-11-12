@@ -1,10 +1,10 @@
 package com.example.GameArena.Modelos;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
+import java.util.List;
 
-
-@Entity // Indica que esta clase se debe mapear como una tabla en la base de datos
-@Table(name = "videojuegos") // Define el nombre exacto de la tabla en H2
+@Entity
 public class Videojuego {
 
     //  ATRIBUTOS
@@ -36,6 +36,9 @@ public class Videojuego {
         this.genero = genero;
     }
 
+    @OneToMany(mappedBy = "videojuego")
+    @JsonIgnore
+    private List<Torneo> torneos;
 
     //  GETTERS Y SETTERS
     // Convierten la entidad a JSON

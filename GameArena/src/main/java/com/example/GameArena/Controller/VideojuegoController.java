@@ -8,7 +8,8 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/videojuegos")
+@RequestMapping("/videojuegos") // o el endpoint que corresponda
+@CrossOrigin(origins = "*") // Para desarrollo, permite cualquier origen
 public class VideojuegoController {
 
     @Autowired

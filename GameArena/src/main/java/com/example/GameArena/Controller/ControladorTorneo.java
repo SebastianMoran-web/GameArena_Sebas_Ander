@@ -1,5 +1,6 @@
-package com.example.GameArena.controlador;
+package com.example.GameArena.Controller;
 
+import org.springframework.web.bind.annotation.*;
 import com.example.GameArena.Modelos.Torneo;
 import com.example.GameArena.Servicios.ServiciosTorneo;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -7,8 +8,8 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/torneo")
-
+@RequestMapping("/torneos")
+@CrossOrigin(origins = "*") // <--- AÑADE ESTA LÍNEA AQUÍ
 public class ControladorTorneo {
 
     @Autowired
