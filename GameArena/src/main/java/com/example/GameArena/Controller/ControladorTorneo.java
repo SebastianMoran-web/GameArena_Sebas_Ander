@@ -1,4 +1,4 @@
-package com.example.GameArena.controlador;
+package com.example.GameArena.Controller;
 
 import com.example.GameArena.Modelos.Torneo;
 import com.example.GameArena.Servicios.ServiciosTorneo;

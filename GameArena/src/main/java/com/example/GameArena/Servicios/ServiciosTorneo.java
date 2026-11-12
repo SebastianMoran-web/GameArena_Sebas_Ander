@@ -1,7 +1,7 @@
 package com.example.GameArena.Servicios;
 
 import com.example.GameArena.Modelos.Torneo;
-import com.example.GameArena.Repositorio.RepositorioTorneo;
+import com.example.GameArena.Repositorios.RepositorioTorneo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
