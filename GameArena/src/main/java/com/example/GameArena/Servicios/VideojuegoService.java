@@ -28,6 +28,9 @@ public class VideojuegoService {
         return videojuegoRepository.findAll();
     }
 
+    public java.util.Optional<Videojuego> obtenerPorId(Long id) {
+        return videojuegoRepository.findById(id);
+    }
     /**
      * Persiste o actualiza una entidad Videojuego en la base de datos.
      *

@@ -23,5 +23,12 @@ public class VideojuegoController {
     @PostMapping
     public Videojuego createVideojuego(@RequestBody Videojuego videojuego) {
         return videojuegoService.guardar(videojuego);
+
+    }
+    @GetMapping("/{id}")
+    public org.springframework.http.ResponseEntity<Videojuego> getVideojuegoById(@PathVariable Long id) {
+        return videojuegoService.obtenerPorId(id)
+                .map(org.springframework.http.ResponseEntity::ok)
+                .orElse(org.springframework.http.ResponseEntity.notFound().build());
     }
 }
